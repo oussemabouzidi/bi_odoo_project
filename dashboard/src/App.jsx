@@ -72,19 +72,30 @@ export default function App() {
 
   // Authenticated: show the full dashboard layout
   return (
-    // AuthContext.Provider wraps the entire app so any child can read the user
     <AuthContext.Provider value={{ user, handleLogout }}>
-      <div className="app-layout">
-        {/* Left sidebar: navigation + logo + user info */}
+      <div style={{
+        display: "flex",
+        flexDirection: "row",
+        height: "100vh",
+        width: "100vw",
+        overflow: "hidden",
+        background: "#0f172a",
+      }}>
+        {/* Left sidebar */}
         <Sidebar
           currentPage={currentPage}
           onNavigate={setCurrentPage}
           onLogout={handleLogout}
         />
 
-        {/* Main content area: renders the selected page */}
-        <main className="main-content">
-          <div className="page-container">
+        {/* Main content — takes all remaining space */}
+        <main style={{
+          flex: 1,
+          minWidth: 0,
+          overflowY: "auto",
+          background: "#0f172a",
+        }}>
+          <div style={{ padding: "32px 36px" }}>
             {renderPage()}
           </div>
         </main>

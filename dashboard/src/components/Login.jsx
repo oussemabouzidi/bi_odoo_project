@@ -62,13 +62,15 @@ export default function Login() {
 
   return (
     <div style={{
-      minHeight: "100vh",
+      position: "fixed",
+      top: 0, left: 0, right: 0, bottom: 0,
       background: "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
       padding: "20px",
+      zIndex: 9999,
     }}>
       {/* Login card */}
       <div style={{
